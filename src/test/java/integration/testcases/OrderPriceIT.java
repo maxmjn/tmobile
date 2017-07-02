@@ -41,7 +41,8 @@ public class OrderPriceIT extends StartServer{
                 .get("/finalPrice")
                 .then()
                 .statusCode(Response.Status.OK.getStatusCode())
-                .extract().as(OrderPriceResponse.class);
+                .extract()
+                .as(OrderPriceResponse.class);
         assertThat("testOrderFinalPrice result failed", result, is(notNullValue()));
         assertThat("testOrderFinalPrice result.getAsOf failed", result.getAsOf(), is(notNullValue()));
         assertThat("testOrderFinalPrice result.getItems failed", result.getItems(), is(notNullValue()));

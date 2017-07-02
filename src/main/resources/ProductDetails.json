@@ -4,6 +4,7 @@
     "basePrice": 100.50,
     "discount": 1.5,
     "discountStart":"2017-06-01T00:00:00Z",
+    "discountEnd":"2017-10-31T23:59:59Z",
     "promotions": {
       "p1":{
         "percentOff":2.5,

@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 /**
  * Created by maxmjn20 on 6/30/17.
  */
-public interface IOrderFinalPrice {
+public interface IOrderFinalPriceCalculator {
 
     /**
      * calculate finalPrice based on orderItem discount, promotions
