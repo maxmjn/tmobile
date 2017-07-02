@@ -6,6 +6,7 @@ import com.coding.tmobile.provider.ISO8601ParamDeserializer;
 import com.coding.tmobile.response.OrderPriceResponse;
 import com.coding.tmobile.service.OrderPriceCalculatorService;
 import lombok.NoArgsConstructor;
+import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,11 +23,19 @@ import java.util.List;
 @Path("/orders")
 @NoArgsConstructor
 @Component
+@Log4j
 public class OrderPriceCalculatorResource {
 
     @Autowired
     protected OrderPriceCalculatorService orderPriceCalculatorService;
 
+    /**
+     * GET resource that accepts list of items, AsOf dateTime
+     * Returns final price for each item and total price on the order
+     * @param listItems
+     * @param asOf
+     * @return
+     */
     @GET
     @Timed
     @Path("/finalPrice")
@@ -34,14 +43,20 @@ public class OrderPriceCalculatorResource {
             @QueryParam("items") List<Integer> listItems,
             @QueryParam("asOf") ISO8601ParamDeserializer asOf
     ) {
+        /*
+            To keep it simple using query params.
+            If we were to use request body we can use model OrderPriceRequest,
+            apply validations before Resource method body is invoked
+         */
         OrderPriceResponse orderPriceResponse;
         try {
             orderPriceResponse = orderPriceCalculatorService.calculateFinalPrice(listItems, asOf);
         } catch (InvalidOrderPriceException e) {
+            log.error(e);
             return Response.status(Response.Status.BAD_REQUEST).type(MediaType.APPLICATION_JSON_TYPE).entity(e).build();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).type(MediaType.APPLICATION_JSON_TYPE).entity(e).build();
         }
 

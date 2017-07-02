@@ -2,6 +2,7 @@ package com.coding.tmobile.service;
 
 import com.coding.tmobile.model.OrderItem;
 import com.coding.tmobile.request.OrderPriceRequest;
+import lombok.extern.log4j.Log4j;
 import org.joda.time.LocalDateTime;
 import org.joda.time.Minutes;
 import org.joda.time.format.DateTimeFormat;
@@ -15,6 +16,7 @@ import java.util.Map;
  * Created by maxmjn20 on 7/2/17.
  */
 @Service
+@Log4j
 public class FinalPriceCalculator implements IOrderFinalPriceCalculator {
 
     private static BigDecimal PERCENT = new BigDecimal(100);

@@ -4,7 +4,7 @@
   <groupId>com.coding.tmobile</groupId>
   <artifactId>price-calculator</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>price-calculator Maven Webapp</name>
   <url>http://maven.apache.org</url>
 

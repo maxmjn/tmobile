@@ -8,6 +8,7 @@ import com.coding.tmobile.service.JsonFileParser;
 import com.coding.tmobile.service.FinalPriceCalculator;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.extern.log4j.Log4j;
 import org.joda.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Service
+@Log4j
 public class OrderPriceCalculatorBO {
 
     @Autowired

@@ -14,6 +14,12 @@ import java.io.InputStream;
 @ComponentScan({"com.coding.tmobile"})
 public class SpringContextConfiguration {
 
+    /*
+        To keep it simple loading static file.
+        Can be improved to be PeriodicCache.
+        Can be improved to read filename as program param
+     */
+
     static {
         InputStream inputStream = FileLoader.loadFile("ProductDetails.json");
         JsonFileParser.parseLoadProducts(inputStream);

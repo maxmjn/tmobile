@@ -38,6 +38,7 @@ public class OrderPriceCalculatorService implements IOrderPriceValidator {
         try {
             orderPriceRequest = new OrderPriceRequest(listItems, asOf.getDate());
         } catch (Exception e) {
+            log.error(e);
             throw new InvalidOrderPriceException("OrderPrice params are required");
         }
         validate(orderPriceRequest);
@@ -48,6 +49,7 @@ public class OrderPriceCalculatorService implements IOrderPriceValidator {
     public void validate(OrderPriceRequest orderPriceRequest) throws Exception {
         if (null == orderPriceRequest || null == orderPriceRequest.getItemId() ||
                 orderPriceRequest.getItemId().isEmpty() || null == orderPriceRequest.getAsOf()) {
+            log.error("InvalidOrderPriceException for OrderPriceRequest:" + orderPriceRequest.toString());
             throw new InvalidOrderPriceException("OrderPrice params are required");
         }
     }

@@ -16,7 +16,8 @@
 #### Dependencies
  - Dropwizard for Jetty application container, Codahale metrics, HealthCheck 
  - Jersey for RESTful api
- - Lombok for getters, setters
+ - Spring for dependency injection
+ - Lombok for getters, setters, log
  - Jackson for JSON parsing, JSON date string deserialization
  - ProductDetails.json product details cache
  
