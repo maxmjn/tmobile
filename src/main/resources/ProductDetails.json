@@ -1,0 +1,35 @@
+[
+  {
+    "itemId": 101,
+    "basePrice": 100.50,
+    "discount": 1.5,
+    "promotions": {
+      "p1":{
+        "percentOff":2.5,
+        "weight":10,
+        "start":"2017-06-01T00:00:00Z",
+        "end":"2017-10-31T23:59:59Z"
+      },
+      "p2": {
+        "percentOff":5.0,
+        "weight":20,
+        "start":"2017-11-01T00:00:00Z",
+        "end":"2018-01-31T23:59:59Z"
+      }
+    }
+  },
+  {
+    "itemId": 201,
+    "basePrice": 200.50,
+    "promotions": {
+      "p1":{
+        "percentOff":3.0,
+        "weight":10
+      },
+      "p2": {
+        "percentOff":6.0,
+        "weight":20
+      }
+    }
+  }
+]
