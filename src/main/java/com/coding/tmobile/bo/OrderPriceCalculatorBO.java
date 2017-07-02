@@ -8,7 +8,9 @@ import com.coding.tmobile.service.IOrderFinalPrice;
 import com.coding.tmobile.service.JsonFileParser;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.joda.time.Hours;
 import org.joda.time.LocalDateTime;
+import org.joda.time.Minutes;
 import org.joda.time.Period;
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -105,7 +107,8 @@ public class OrderPriceCalculatorBO implements IOrderFinalPrice{
                         .withLocale(Locale.ENGLISH)
                         .parseLocalDateTime((String) promoDetails.get("end"));
 
-                if (Period.fieldDifference(asOf, end).getMinutes() < 0) {
+                Minutes diff = Minutes.minutesBetween(asOf, end);
+                if (diff.getMinutes() < 0) {
                     continue;
                 }
             }

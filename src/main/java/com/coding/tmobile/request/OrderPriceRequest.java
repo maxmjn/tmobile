@@ -1,9 +1,5 @@
 package com.coding.tmobile.request;
 
-import com.coding.tmobile.provider.LocalDateTimeDeserializer;
-import com.coding.tmobile.provider.LocalDateTimeSerializer;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +19,5 @@ import java.util.List;
 public class OrderPriceRequest {
     @NotNull
     List<Integer> itemId;
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime asOf;
 }

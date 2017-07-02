@@ -50,6 +50,7 @@ public class JsonFileParser {
 
                 //JACKSON parser for JSONObject to POJO
                 ObjectMapper mapper = new ObjectMapper();
+                mapper.findAndRegisterModules(); //dependency jackson-datatype-jsr310 json date string serialization
 
                 ProductInfo productDetail = mapper.readValue(jsonObject.toJSONString(), ProductInfo.class);
 

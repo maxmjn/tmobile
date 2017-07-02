@@ -3,6 +3,7 @@
     "itemId": 101,
     "basePrice": 100.50,
     "discount": 1.5,
+    "discountStart":"2017-06-01T00:00:00Z",
     "promotions": {
       "p1":{
         "percentOff":2.5,

@@ -2,7 +2,6 @@ package com.coding.tmobile.response;
 
 import com.coding.tmobile.model.OrderItem;
 import com.coding.tmobile.provider.LocalDateTimeSerializer;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
